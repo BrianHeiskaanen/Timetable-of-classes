@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/auto_update"
+        android:title="Автообновление" />
+
+    <item
+        android:title="Открыть сайт с расписанием"
+        android:id="@+id/site_with_a_schedule" />
+
+    <item
+        android:title="О программе"
+        android:id="@+id/about_the_program" />
+
+</menu>
