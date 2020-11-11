@@ -3,12 +3,15 @@ package com.example.timetableofclasses;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.GestureDetector;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
+import android.view.View;
 import android.widget.Toast;
 
 import androidx.appcompat.widget.Toolbar;
@@ -61,11 +64,14 @@ public class MainActivity extends AppCompatActivity implements GestureDetector.O
             @Override
             public void onItemSelected(int id) {
                 Fragment fragment = null;
+                Toolbar toolbar = findViewById(R.id.toolbar);
 
                 if(id == R.id.learners) {
+                    toolbar.setTitle("Группы");
                     fragment = new LearnersFragment();
                 }
                 else if(id == R.id.teachers) {
+                    toolbar.setTitle("Преподаватели");
                     fragment = new TeachersFragment();
                 }
 
@@ -147,14 +153,32 @@ public class MainActivity extends AppCompatActivity implements GestureDetector.O
                     Toast.LENGTH_SHORT).show();
         }
         else if(id == R.id.site_with_a_schedule) {
-            Toast.makeText(getApplicationContext(), "Открыть сайт с расписанием",
-                    Toast.LENGTH_SHORT).show();
+            showSiteWithAScheduleDialog();
+        }
+        else if(id == R.id.call_schedule) {
+            showCallScheduleDialog();
         }
         else if(id == R.id.about_the_program) {
-            Toast.makeText(getApplicationContext(), "О программе",
-                    Toast.LENGTH_SHORT).show();
+            showAboutTheProgramDialog();
         }
         return true;
+    }
+
+
+    //Show dropdown menu elements
+    public void showSiteWithAScheduleDialog() {
+        SiteWithAScheduleDialogFragment dialog = new SiteWithAScheduleDialogFragment();
+        dialog.show(getSupportFragmentManager(), "custom");
+    }
+
+    public void showCallScheduleDialog() {
+        CallScheduleDialogFragment dialog = new CallScheduleDialogFragment();
+        dialog.show(getSupportFragmentManager(), "custom");
+    }
+
+    public void showAboutTheProgramDialog() {
+        AboutTheProgramDialogFragment dialog = new AboutTheProgramDialogFragment();
+        dialog.show(getSupportFragmentManager(), "custom");
     }
 
 
@@ -187,5 +211,37 @@ public class MainActivity extends AppCompatActivity implements GestureDetector.O
     @Override
     public boolean onFling(MotionEvent motionEvent, MotionEvent motionEvent1, float v, float v1) {
         return false;
+    }
+
+
+    //Open URL
+    public void openSiteKzDay(View view) {
+        goToUrl("http://mgke.minsk.edu.by/ru/main.aspx?guid=3831");
+    }
+
+    public void openSiteKnDay(View view) {
+        goToUrl("http://mgke.minsk.edu.by/ru/main.aspx?guid=3841");
+    }
+
+    public void openSitePrDay(View view) {
+        goToUrl("http://mgke.minsk.edu.by/ru/main.aspx?guid=3821");
+    }
+
+    public void openSiteKzWeek(View view) {
+        goToUrl("http://mgke.minsk.edu.by/ru/main.aspx?guid=3781");
+    }
+
+    public void openSiteKnWeek(View view) {
+        goToUrl("http://mgke.minsk.edu.by/ru/main.aspx?guid=3791");
+    }
+
+    public void openSitePrWeek(View view) {
+        goToUrl("http://mgke.minsk.edu.by/ru/main.aspx?guid=3811");
+    }
+
+    private void goToUrl(String url) {
+        Uri uriUrl = Uri.parse(url);
+        Intent launchBrowser = new Intent(Intent.ACTION_VIEW, uriUrl);
+        startActivity(launchBrowser);
     }
 }

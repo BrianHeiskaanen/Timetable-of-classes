@@ -10,7 +10,11 @@
         android:id="@+id/site_with_a_schedule" />
 
     <item
-        android:title="О программе"
+        android:title="Расписание звонков"
+        android:id="@+id/call_schedule" />
+
+    <item
+        android:title="О приложении"
         android:id="@+id/about_the_program" />
 
 </menu>

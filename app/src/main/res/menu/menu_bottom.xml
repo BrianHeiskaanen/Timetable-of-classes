@@ -7,14 +7,14 @@
         android:id="@+id/learners"
         android:icon="@drawable/ic_groups"
         android:title="Учащимся"
-        app:cnb_backgroundColor="#ff785b"
-        app:cnb_iconColor="#fff"
-        app:cnb_textColor="#fff"/>
+        app:cnb_backgroundColor="@color/white"
+        app:cnb_iconColor="@color/black"
+        app:cnb_textColor="@color/black" />
     <item
         android:id="@+id/teachers"
         android:icon="@drawable/ic_self_improvement"
         android:title="Преподавателям"
-        app:cnb_backgroundColor="#ff785b"
-        app:cnb_iconColor="#fff"
-        app:cnb_textColor="#fff"/>
+        app:cnb_backgroundColor="@color/white"
+        app:cnb_iconColor="@color/black"
+        app:cnb_textColor="@color/black" />
 </menu>

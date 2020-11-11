@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:textSize="17dp"
+        android:text="Расписание на будние дни" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="25dp"
+        android:textColor="@color/black"
+        android:textSize="17dp"
+        android:text="1 пара: 9:00 - 9:45\n               9:55 - 10:40\n\n2 пара: 10:50 - 11:35\n               11:55 - 12:40\n\n3 пара: 13:00 - 13:45\n               13:55 - 14:40\n\n4 пара: 14:50 - 15:35\n               15:45 - 16:30"  />
+
+    <TextView
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:textSize="17dp"
+        android:text="Расписание на выходные дни" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="25dp"
+        android:textColor="@color/black"
+        android:textSize="17dp"
+        android:text="1 пара: 9:00 - 10:20\n\n2 пара: 10:30 - 11:15\n               11:35 - 12:20\n\n3 пара: 12:30 - 13:50\n\n4 пара: 14:00 - 15:20"  />
+
+</LinearLayout>
